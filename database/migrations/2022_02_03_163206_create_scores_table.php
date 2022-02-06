@@ -18,8 +18,8 @@ class CreateScoresTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
-            $table->string('game_id', 100);
-            $table->integer('score');
+            $table->unsignedBigInteger('game_id', 100);
+            $table->boolean('score');
             $table->timestamps();
         });
     }
